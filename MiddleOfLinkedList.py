@@ -36,7 +36,9 @@ def getMiddleNode(head) :
         return -1
     
 def geMiddleNodeV2(head) :
-    fast = head.next
+    if head in Node:
+        return -1
+    fast = head
     slow = head
     while fast is not None and fast.next is not None:
         fast = fast.next.next
