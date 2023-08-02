@@ -36,30 +36,8 @@ def isBalanced(str):
             
     return stack.isStackEmpty()
 
-def postFixEval(str):
-    stack = Stack()
-    for i in range(len(str)):
-        if str[i] == '+' or str[i] == '*' or str[i] == '/' or str[i] == '-':
-            secondeItem = stack.pop()
-            firstItem = stack.pop()
-            stack.push(evaluateExpressoin(int(firstItem),int(secondeItem),str[i]))
-        else:
-            stack.push(str[i])
 
-    return stack.pop()
-
-def evaluateExpressoin(first,second,operator):
-    if operator == '+':
-        return int(first + second)
-    if operator == '-':
-        return int(first - second)
-    if operator == '*':
-        return int(first * second)
-    if operator == '/':
-        return int(first / second)         
-
-print(postFixEval("525*+5/"))
-#print(isBalanced("[{({}"))
+print(isBalanced("[{({}"))
 
 # stack = Stack()
 # stack.push(10)
